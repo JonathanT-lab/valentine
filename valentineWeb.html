@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      background: #ffe6ee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      background: #ffb6c1;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background: #ddd;
+    }
+
+    #message {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #ff1a75;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Will you be my Valentine? 💘</h1>
+    <button id="yes" onclick="yesClick()">YES</button>
+    <button id="no" onmouseover="moveNo()">NO</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    // NO button runs away
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      noBtn.style.position = "absolute";
+      noBtn.style.left = Math.random() * 300 + "px";
+      noBtn.style.top = Math.random() * 300 + "px";
+    }
+
+    // YES button: show message then go to letter after 1 second
+    function yesClick() {
+      document.getElementById("message").innerText = "YAY!! 💖 I knew it 😍";
+
+      setTimeout(function() {
+        window.location.href = "letter.html";
+      }, 1000); // 1000ms = 1 second
+    }
+  </script>
+
+</body>
+</html>
